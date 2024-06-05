@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
-const initRoute = require("./src/route")
+const initRoute = require("./src/route");
 
 // create app
 const app = express();
@@ -16,9 +16,8 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-
 // Api endpoint
-initRoute(app)
+initRoute(app);
 
 const PORT = process.env.PORT || 8888;
 
