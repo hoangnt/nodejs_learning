@@ -1,10 +1,10 @@
 const login = (req, res) => {
-    // if (!req.email && !req.password) {
-    //   return res.send({
-    //     message: "Login failed",
-    //     data: null,
-    //   });
-    // }
+  if (!req.body.email || !req.body.password) {
+    return res.send({
+      message: "Login failed",
+      data: null,
+    });
+  }
 
   return res.send({
     message: "Success",
