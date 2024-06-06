@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 const initRoute = require("./src/route");
+require("./connection");
 
 // create app
 const app = express();
