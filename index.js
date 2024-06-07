@@ -1,8 +1,9 @@
-const express = require("express");
-const cors = require("cors");
+import express, { json, urlencoded } from "express";
+import cors from "cors";
+import initRoute from "./src/route";
+import "./connection";
+
 require("dotenv").config();
-const initRoute = require("./src/route");
-require("./connection");
 
 // create app
 const app = express();
@@ -14,8 +15,8 @@ app.use(
     methods: ["GET", "POST", "PUT"],
   })
 );
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(json());
+app.use(urlencoded({ extended: true }));
 
 // Api endpoint
 initRoute(app);

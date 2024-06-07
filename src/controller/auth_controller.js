@@ -1,18 +1,21 @@
-const login = (req, res) => {
-  if (!req.body.email || !req.body.password) {
-    return res.send({
-      message: "Login failed",
+import * as service from "../service";
+
+const login = async (req, res) => {
+  try {
+    const response = await service.login();
+    return res.status(200).json({
+      message: "Success",
+      data: {
+        accessToken: "ashdj̉́&̉̃*̉́&als@AKJSJDLJAJajsdklkj@%̉e@!@JLJF",
+        refreshToken: "ASFLKJALKSFJLKJakjsjfdalkjsfajslfjaAKJA",
+      },
+    });
+  } catch (error) {
+    return res.status(500).json({
       data: null,
+      message: "Login failed !",
     });
   }
-
-  return res.send({
-    message: "Success",
-    data: {
-      accessToken: "ashdj̉́&̉̃*̉́&als@AKJSJDLJAJajsdklkj@%̉e@!@JLJF",
-      refreshToken: "ASFLKJALKSFJLKJakjsjfdalkjsfajslfjaAKJA",
-    },
-  });
 };
 
 const userProfile = (req, res) => {
@@ -48,7 +51,7 @@ const refreshToken = (req, res) => {
   });
 };
 
-module.exports = {
+export default {
   login,
   logout,
   userProfile,

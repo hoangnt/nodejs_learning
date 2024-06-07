@@ -1,6 +1,6 @@
-const entry = require("./entry");
-const auth = require("./auth");
-const article = require("./article");
+import entry from "./entry";
+import auth from "./auth";
+import article from "./article";
 
 const initRoute = (app) => {
   app.use("/", entry);
@@ -8,4 +8,4 @@ const initRoute = (app) => {
   app.use("/api/v1", article);
 };
 
-module.exports = initRoute;
+export default initRoute;

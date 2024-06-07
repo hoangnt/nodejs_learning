@@ -103,7 +103,7 @@ const articleDetail = (req, res) => {
   });
 };
 
-module.exports = {
+export default {
   allArticle,
   articleDetail,
 };

@@ -1,6 +1,7 @@
-const router = require("express").Router();
-const entryController = require("../controller/entry_controller");
+import express from "express";
+import entryController from "../controller/entry_controller";
 
+const router = express.Router();
 router.get("/", entryController.entry);
 
-module.exports = router;
+export default router;
