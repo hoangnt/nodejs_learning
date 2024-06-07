@@ -1,0 +1,4 @@
+INSERT INTO Users (email, password, name, birthday, gender, avatarUrl) 
+    VALUES ("Nguyen The Nao", "123456", "nthoang1308@gmail.com", "13/08/1995", 1, "https://picsum.photos/1921/1086");
+INSERT INTO Users (email, password, name, birthday, gender, avatarUrl) 
+    VALUES ("Dang Thi Beo Lo", "123456", "phungdang@gmail.com", "25/11/1996", 1, "https://picsum.photos/1952/1086");

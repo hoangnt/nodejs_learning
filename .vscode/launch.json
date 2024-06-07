@@ -11,6 +11,11 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
+            "runtimeExecutable": "nodemon",
+            "runtimeArgs": [
+                "--exec",
+                "babel-node",
+            ],
             "program": "${workspaceFolder}/index.js"
         }
     ]
