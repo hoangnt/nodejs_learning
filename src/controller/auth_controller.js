@@ -3,13 +3,7 @@ import * as service from "../service";
 const login = async (req, res) => {
   try {
     const response = await service.login();
-    return res.status(200).json({
-      message: "Success",
-      data: {
-        accessToken: "ashdj̉́&̉̃*̉́&als@AKJSJDLJAJajsdklkj@%̉e@!@JLJF",
-        refreshToken: "ASFLKJALKSFJLKJakjsjfdalkjsfajslfjaAKJA",
-      },
-    });
+    return res.status(200).json(response);
   } catch (error) {
     return res.status(500).json({
       data: null,
@@ -18,26 +12,22 @@ const login = async (req, res) => {
   }
 };
 
-const userProfile = (req, res) => {
-  return res.send({
-    message: "Success",
-    data: {
-      name: "Nguyen The Nao",
-      email: "nthoang1308@gmail.com",
-      avatarUrl: "https://picsum.photos/1921/1086",
-      birthday: "13/08/1995",
-      gender: 1,
-    },
-  });
+const userProfile = async (req, res) => {
+  try {
+    const response = await service.userProfile();
+    return res.status(200).json(response);
+  } catch (error) {
+    return res.status(500).json({
+      data: null,
+      message: "User profile failed !",
+    });
+  }
 };
 
 const logout = (req, res) => {
   return res.send({
     message: "Success",
-    data: {
-      accessToken: "ashdj̉́&̉̃*̉́&als@AKJSJDLJAJajsdklkj@%̉e@!@JLJF",
-      refreshToken: "ASFLKJALKSFJLKJakjsjfdalkjsfajslfjaAKJA",
-    },
+    data: null,
   });
 };
 
